@@ -50,7 +50,7 @@ function App() {
   return (
     <div>
       <h1>Hello React</h1>
-      <pizza />
+      <Pizza />
     </div>
   );
 }
@@ -58,9 +58,9 @@ function App() {
 function Pizza() {
   return (
     <div>
+      <img src="pizzas/spinaci.jpg" alt="pizza" />
       <h1>pizza</h1>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-      <img src="pizzas/spi naci.jpg" atl="pizza"></img>
     </div>
   );
 }
