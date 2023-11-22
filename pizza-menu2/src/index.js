@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -48,22 +49,73 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
-      <h1>Hello React</h1>
-      <Pizza />
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+function Header() {
+  return (
+    <header className="header">
+      <h1>Fast Pizza.co</h1>;
+    </header>
+  );
+}
+function Menu() {
+  return (
+    <main className="menu">
+      <h2>Our Menu</h2>
+      <Pizza
+        name="pizza"
+        photoName="pizzas/spinaci.jpg"
+        description="Tomato, mozarella, spinach, and ricotta cheese"
+        price="10"
+      />
+      <Pizza
+        name="pizza"
+        photoName="pizzas/spinaci.jpg"
+        description="Tomato, mozarella, spinach, and ricotta cheese"
+        price={10}
+      />
+    </main>
+  );
+}
+
+function Pizza(props) {
+  console.log(props);
+  return (
+    <div className="pizza">
+      <img src={props.photoName} alt="pizza" />
+      <div>
+        <h1>{props.name}</h1>
+        <p>{props.description}</p>
+        <span>{props.price}</span>
+      </div>
     </div>
   );
 }
 
-function Pizza() {
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 8;
+  const closeHour = 22;
+  const isOpen = hour <= openHour && hour >= closeHour;
+  console.log(isOpen);
+
+  // if (hour <= openHour && hour >= closeHour) alert("we are currently open");
+  // else alert("we're closed now");
+
   return (
-    <div>
-      <img src="pizzas/spinaci.jpg" alt="pizza" />
-      <h1>pizza</h1>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
+    <footer class="footer">
+      {" "}
+      {new Date().toLocaleTimeString()}. we're currently opened
+    </footer>
   );
+  // return React.createElement("footer", null, "we're currently opened!");
 }
+
 //React version V18
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
