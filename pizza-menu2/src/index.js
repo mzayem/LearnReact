@@ -38,16 +38,16 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  console.log(props);
-  if (props.pizzaObj.sold) return <header />;
+function Pizza({ pizzaObj }) {
+  console.log(pizzaData);
+  if (pizzaObj.sold) return <header />;
   return (
     <div className="pizza">
-      <img src={props.pizzaObj.photoName} alt="pizza" />
+      <img src={pizzaObj.photoName} alt="pizza" />
       <div>
-        <h1>{props.pizzaObj.name}</h1>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
+        <h1>{pizzaObj.name}</h1>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.price}</span>
       </div>
     </div>
   );
@@ -79,12 +79,11 @@ function Footer() {
   // return React.createElement("footer", null, "we're currently opened!");
 }
 
-function Order(props) {
+function Order({ closeHour }) {
   return (
     <div class="order">
       <p>
-        we're open until {props.closeHour}:00. Come and visit us or order
-        online.{" "}
+        we're open until {closeHour}:00. Come and visit us or order online.{" "}
       </p>
       <button class="btn">order</button>
     </div>
