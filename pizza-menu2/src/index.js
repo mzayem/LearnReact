@@ -48,12 +48,12 @@ function Pizza({ pizzaObj }) {
   console.log(pizzaData);
   if (pizzaObj.sold) return <header />;
   return (
-    <div className="pizza">
+    <div className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""} `}>
       <img src={pizzaObj.photoName} alt="pizza" />
       <div>
         <h1>{pizzaObj.name}</h1>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price}</span>
+        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
     </div>
   );
