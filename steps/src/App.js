@@ -12,20 +12,22 @@ function App() {
   /*  const [test, settest] = useState({ name: "Zayem" }); */
   function handlePrevious() {
     if (step > 1) {
-      setstep(step - 1);
+      setstep((s) => s - 1);
     }
   }
   function handleNext() {
     if (step < 3) {
-      setstep(step + 1);
+      setstep((s) => s + 1);
     }
     //bad practice
     /* 
-    test.name = "Azam"; */
+    test.name = "Azam";
+    settest(name : "Azam");
+     */
   }
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
 
