@@ -15,7 +15,7 @@ function App() {
 function Header() {
   return (
     <header className="header">
-      <h1>Fast Pizza.co</h1>;
+      <h1>Fast Pizza.co</h1>
     </header>
   );
 }
