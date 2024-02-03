@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./index.css";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function Counter() {
               : Count > 0
               ? `${Count} Days from today is`
               : `${Math.abs(Count)} Days ago was `}
-          </span>{" "}
+          </span>
           {date.toDateString()}
         </p>
       </div>
